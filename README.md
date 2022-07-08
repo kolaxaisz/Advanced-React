@@ -21,9 +21,6 @@ A Premium Training Course from Wes Bos
   - [Module 1. - Introduction and Setup](#module-1---introduction-and-setup)
     - [01 - Tooling and Starter Files Setup (09:33)](#01---tooling-and-starter-files-setup-0933)
       - [Frontend packages](#frontend-packages)
-    - [02 - The Tech Stack Explained (07:41)](#02---the-tech-stack-explained-0741)
-  - [Module 2. - Learning Next.js](#module-2---learning-nextjs)
-    - [03 - An intro to Next (08:52)](#03---an-intro-to-next-0852)
 
 ## Introduction
 
@@ -185,41 +182,6 @@ Chrome extensions:
 
 ```shell
 npx create-next-app@latest --ts .
-```
-
-### 02 - The Tech Stack Explained (07:41)
-
-Front-End:
-
-- [React][reactjs]
-- [Next.js][nextjs]
-- [Apollo Client][apollographql]
-- [Styled Components][styled-components]
-
-Backend:
-
-- [Keystone.js][keystonejs]
-- [Node][node]
-- [MongoDB][mongodb]
-
-## Module 2. - Learning Next.js
-
-### 03 - An intro to Next (08:52)
-
-- <https://nextjs.org/docs/getting-started>
-
-> <a id="code-03-01">_**Listing 3.1** `pages/index.js`_</a>
-
-```react
-export default function() {
-  return <div>
-    <p>Hello!</p>
-  </div>
-}
-```
-
-```bash
-npm run dev
 ```
 
 [advancedreact]: https://advancedreact.com/ "Fullstack Advanced React & GraphQL"
