@@ -21,6 +21,9 @@ A Premium Training Course from Wes Bos
   - [Module 1. - Introduction and Setup](#module-1---introduction-and-setup)
     - [01 - Tooling and Starter Files Setup (09:33)](#01---tooling-and-starter-files-setup-0933)
       - [Frontend packages](#frontend-packages)
+    - [02 - The Tech Stack Explained (07:41)](#02---the-tech-stack-explained-0741)
+  - [Module 2. - Learning Next.js](#module-2---learning-nextjs)
+    - [03 - An intro to Next (08:52)](#03---an-intro-to-next-0852)
 
 ## Introduction
 
@@ -184,14 +187,185 @@ Chrome extensions:
 npx create-next-app@latest --ts .
 ```
 
+### 02 - The Tech Stack Explained (07:41)
+
+Front-End:
+
+- [React][reactjs]
+- [Next.js][nextjs]
+- [Apollo Client][apollographql]
+- [Styled Components][styled-components]
+
+Backend:
+
+- [Keystone.js][keystonejs]
+- [Node][node]
+- [MongoDB][mongodb]
+
+## Module 2. - Learning Next.js
+
+### 03 - An intro to Next (08:52)
+
+- <https://nextjs.org/docs/getting-started>
+
+> <a id="code-03-01">_**Listing 3.1** `pages/index.js`_</a>
+
+```react
+export default function() {
+  return <div>
+    <p>Hello!</p>
+  </div>
+}
+```
+
+```bash
+npm run dev
+```
+
+### 04 — Creating a Page Layout Component (18:12)
+
+```shell
+npm install -D prettier
+```
+
+> <a id="code-04-01">_**Listing 4.1** `components/Page.tsx`_</a>
+
+```tsx
+export default function Page() {
+  return <div>
+    <h2>I am the page component!</h2>
+  </div>
+}
+```
+
+- [Eslint config by Wes Bos][github-wesbos-eslint]
+
+> <a id="code-04-02">_**Listing 4.2** `pages/index.js`_</a>
+
+```react
+import Page from '../components/Page';
+
+export default function IndexPage() {
+  return (
+    <Page cool="Heck ya!">
+      <p>Hello!</p>
+      <code>var</code>
+      <h3>I am a child</h3>
+    </Page>
+  );
+}
+```
+
+> <a id="code-04-03">_**Listing 4.3** `components/Page.js`_</a>
+
+```react
+import PropTypes from "prop-types";
+
+export default function Page({ children, cool }) {
+  return (
+    <div>
+      <h2>I am the page component!</h2>
+      <p>{children}</p>
+      <p>{cool}</p>
+    </div>
+  );
+}
+
+Page.propTypes = {
+  cool: PropTypes.string,
+  children: PropTypes.any,
+};
+```
+
+> <a id="code-04-04">_**Listing 4.4** `pages/sell.js`_</a>
+
+```react
+import Page from '../components/Page';
+
+export default function SellPage() {
+  return (
+    <Page>
+      <p>Hello i am the sell page!</p>
+    </Page>
+  );
+}
+```
+
+#### [11:00] Next.js `_app.js` file
+
+> <a id="code-04-05">_**Listing 4.5** `app/frontend/pages/_app.js`_</a>
+
+```react
+import Page from '../components/Page';
+
+// eslint-disable-next-line react/prop-types
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <Page>
+      <Component {...pageProps} />
+    </Page>
+  );
+}
+```
+
+> <a id="code-04-06">_**Listing 4.6** `app/frontend/pages/index.js`_</a>
+
+```react
+export default function IndexPage() {
+  return (
+    <>
+      <p>Hello!</p>
+      <code>var</code>
+      <h3>I am a child</h3>
+    </>
+  );
+}
+```
+
+> <a id="code-04-07">_**Listing 4.7** `app/frontend/pages/sell.js`_</a>
+
+```react
+export default function SellPage() {
+  return <p>Hello i am the sell page!</p>;
+}
+```
+
+#### [14:45] Next.js `_document.js` file
+
+> <a id="code-04-08">_**Listing 4.8** `app/frontend/pages/_document.js`_</a>
+
+```react
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+
+export default class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang="de-DE">
+        {/* <Head></Head> */}
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+```
+
+
 [advancedreact]: https://advancedreact.com/ "Fullstack Advanced React & GraphQL"
 [apollo-react-hooks]: https://www.apollographql.com/docs/react/v2/api/react-hooks/ "@apollo/react-hooks"
+[apollographql:apollo-client-devtool]: https://www.apollographql.com/docs/react/development-testing/developer-tooling/#apollo-client-devtools "Apollo Client Devtools"
 [apollographql:apollo-client]: https://www.apollographql.com/docs/react/ "Introduction to Apollo Client"
 [github-advanced-react]: https://github.com/wesbos/Advanced-React "Starter Files and Solutions for Full Stack Advanced React and GraphQL"
+[github-react]: https://github.com/facebook/react "Reactjs"
 [graphql-caching]: https://graphql.org/learn/caching/
 [graphql-queries]: https://graphql.org/learn/queries/
 [keystonejs]: https://keystonejs.com/ "The superpowered CMS for developers"
+[mongodb-compass]: https://www.mongodb.com/products/compass "Compass. The GUI for MongoDB."
 [nextjs]: https://nextjs.org/ "The React Framework for Production"
 [react-testing-library]: https://testing-library.com/docs/react-testing-library/intro/ "React Testing Library"
 [reactjs]: https://reactjs.org/ "A JavaScript library for building user interfaces"
 [styled-components]: https://styled-components.com/ "Visual primitives for the component age"
+[twitter-wesbos]: https://twitter.com/wesbos "Wes Bos on Twitter"
+[wesbos-uses]: https://wesbos.com/uses "Wes Bos uses"
