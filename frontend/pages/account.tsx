@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
 const AccountPage: NextPage = () => {
   return (
-    <div><p>Hello</p></div>
-  )
-}
+    <div>
+      <p>Account Page</p>
+    </div>
+  );
+};
 
-export default AccountPage
+export default AccountPage;

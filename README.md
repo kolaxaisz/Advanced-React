@@ -352,6 +352,9 @@ export default class MyDocument extends Document {
 }
 ```
 
+### 05 - Creating our Header and Nav Components
+
+
 
 [advancedreact]: https://advancedreact.com/ "Fullstack Advanced React & GraphQL"
 [apollo-react-hooks]: https://www.apollographql.com/docs/react/v2/api/react-hooks/ "@apollo/react-hooks"
