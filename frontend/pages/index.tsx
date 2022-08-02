@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 const IndexPage: NextPage = () => {
-  return <p>Hello</p>;
+  return <p>Index Page</p>;
 };
 
 export default IndexPage;

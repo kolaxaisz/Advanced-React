@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
 const OrdersPage: NextPage = () => {
   return (
-    <div><p>Hello</p></div>
-  )
-}
+    <div>
+      <p>Orders Page</p>
+    </div>
+  );
+};
 
-export default OrdersPage
+export default OrdersPage;
